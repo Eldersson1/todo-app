@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Today</h1>
+            <input type="text" id="search" placeholder="Search tasks...">
+        </div>
+        <div class="categories">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('meeting')">Meeting</button>
+            <button onclick="filterTasks('review')">Review</button>
+            <button onclick="filterTasks('marketing')">Marketing</button>
+        </div>
+        <ul id="task-list"></ul>
+        <button id="add-task-btn" onclick="showTaskModal()">Add new task</button>
+    </div>
+
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideTaskModal()">&times;</span>
+            <h2>Add Task</h2>
+            <input type="text" id="task-title" placeholder="Title">
+            <input type="text" id="task-description" placeholder="Description">
+            <select id="task-category">
+                <option value="meeting">Meeting</option>
+                <option value="review">Review</option>
+                <option value="marketing">Marketing</option>
+            </select>
+            <select id="task-priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <button onclick="addTask()">Save</button>
+        </div>
+    </div>
+
+    <script src="code.js"></script>
+</body>
+</html>
